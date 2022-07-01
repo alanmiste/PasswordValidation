@@ -39,7 +39,7 @@ public class PasswordValidationTest {
         //When
         boolean result = PasswordValidation.SpaceIncluded(password);
         //Then
-        Assertions.assertEquals(true,result);
+        Assertions.assertEquals(false,result);
     }
     @Test
     void spaceIncludedYes(){
@@ -48,7 +48,7 @@ public class PasswordValidationTest {
         //When
         boolean result = PasswordValidation.SpaceIncluded(password);
         //Then
-        Assertions.assertEquals(false,result);
+        Assertions.assertEquals(true,result);
     }
 
 

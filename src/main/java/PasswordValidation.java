@@ -25,8 +25,8 @@ public class PasswordValidation {
 
     public static boolean SpaceIncluded(String password) {
         if(password.contains(" "))
-            return false;
-        else return true;
+            return true;
+        else return false;
     }
 
     public static boolean ContainUpperCase(String password) {
@@ -39,7 +39,7 @@ public class PasswordValidation {
     }
 
     public static boolean PassCheck(String password) {
-        if(PasswordLength(password)>=8 && NumbersIncluded(password) && ContainUpperCase(password) && SpaceIncluded(password))
+        if(PasswordLength(password)>=8 && NumbersIncluded(password) && ContainUpperCase(password) && !SpaceIncluded(password))
             return true;
         else return false;
     }
