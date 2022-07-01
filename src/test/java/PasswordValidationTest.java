@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.stream.Stream;
-
 public class PasswordValidationTest {
 
     @Test
@@ -20,7 +18,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neueFische";
         //When
-        boolean result = PasswordValidation.PumbersIncluded(password);
+        boolean result = PasswordValidation.NumbersIncluded(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -30,7 +28,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neueFische1";
         //When
-        boolean result = PasswordValidation.PumbersIncluded(password);
+        boolean result = PasswordValidation.NumbersIncluded(password);
         //Then
         Assertions.assertEquals(true,result);
     }
