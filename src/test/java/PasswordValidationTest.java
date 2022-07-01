@@ -8,7 +8,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neuefische";
         //When
-        int result = PasswordValidation.PasswordLength(password);
+        int result = PasswordValidation.passwordLength(password);
         //Then
         Assertions.assertEquals(10,result);
     }
@@ -18,7 +18,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neueFische";
         //When
-        boolean result = PasswordValidation.NumbersIncluded(password);
+        boolean result = PasswordValidation.numbersIncluded(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -28,7 +28,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neueFische1";
         //When
-        boolean result = PasswordValidation.NumbersIncluded(password);
+        boolean result = PasswordValidation.numbersIncluded(password);
         //Then
         Assertions.assertEquals(true,result);
     }
@@ -37,7 +37,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neueFische1";
         //When
-        boolean result = PasswordValidation.SpaceIncluded(password);
+        boolean result = PasswordValidation.spaceIncluded(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -46,7 +46,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neue Fische1";
         //When
-        boolean result = PasswordValidation.SpaceIncluded(password);
+        boolean result = PasswordValidation.spaceIncluded(password);
         //Then
         Assertions.assertEquals(true,result);
     }
@@ -57,7 +57,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neuefische";
         //When
-        boolean result = PasswordValidation.ContainUpperCase(password);
+        boolean result = PasswordValidation.containUpperCase(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -67,7 +67,7 @@ public class PasswordValidationTest {
         //Given
         String password= "neueFische";
         //When
-        boolean result = PasswordValidation.ContainUpperCase(password);
+        boolean result = PasswordValidation.containUpperCase(password);
         //Then
         Assertions.assertEquals(true,result);
     }
@@ -77,7 +77,7 @@ public class PasswordValidationTest {
         //Given
         String password = "neue";
         //When
-        boolean result = PasswordValidation.PassCheck(password);
+        boolean result = PasswordValidation.passCheck(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -86,7 +86,7 @@ public class PasswordValidationTest {
         //Given
         String password = "neuefische";
         //When
-        boolean result = PasswordValidation.PassCheck(password);
+        boolean result = PasswordValidation.passCheck(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -95,7 +95,7 @@ public class PasswordValidationTest {
         //Given
         String password = "neueFische";
         //When
-        boolean result = PasswordValidation.PassCheck(password);
+        boolean result = PasswordValidation.passCheck(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -104,7 +104,7 @@ public class PasswordValidationTest {
         //Given
         String password = "neuefi3";
         //When
-        boolean result = PasswordValidation.PassCheck(password);
+        boolean result = PasswordValidation.passCheck(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -113,7 +113,7 @@ public class PasswordValidationTest {
         //Given
         String password = "neueFi3";
         //When
-        boolean result = PasswordValidation.PassCheck(password);
+        boolean result = PasswordValidation.passCheck(password);
         //Then
         Assertions.assertEquals(false,result);
     }
@@ -122,7 +122,7 @@ public class PasswordValidationTest {
         //Given
         String password = "neueFische3";
         //When
-        boolean result = PasswordValidation.PassCheck(password);
+        boolean result = PasswordValidation.passCheck(password);
         //Then
         Assertions.assertEquals(true,result);
     }

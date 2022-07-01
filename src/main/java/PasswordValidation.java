@@ -11,25 +11,25 @@ public class PasswordValidation {
                 "Enter a password: ");
         String password = input.nextLine();
 
-        if(PassCheck(password))
+        if(passCheck(password))
             System.out.println("Your Password is GOOD!");
         else System.out.println("Your password is NOT good, please read Terms and Conditions and try again!");
     }
-    public static int PasswordLength(String password) {
+    public static int passwordLength(String password) {
         return password.length();
     }
 
-    public static boolean NumbersIncluded(String password) {
+    public static boolean numbersIncluded(String password) {
         return password.matches(".*\\d.*");
     }
 
-    public static boolean SpaceIncluded(String password) {
+    public static boolean spaceIncluded(String password) {
         if(password.contains(" "))
             return true;
         else return false;
     }
 
-    public static boolean ContainUpperCase(String password) {
+    public static boolean containUpperCase(String password) {
         for(int i=0;i<password.length();i++){
             if(Character.isUpperCase(password.charAt(i))){
                 return true;
@@ -38,8 +38,8 @@ public class PasswordValidation {
         return false;
     }
 
-    public static boolean PassCheck(String password) {
-        if(PasswordLength(password)>=8 && NumbersIncluded(password) && ContainUpperCase(password) && !SpaceIncluded(password))
+    public static boolean passCheck(String password) {
+        if(passwordLength(password)>=8 && numbersIncluded(password) && containUpperCase(password) && !spaceIncluded(password))
             return true;
         else return false;
     }
