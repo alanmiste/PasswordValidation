@@ -32,6 +32,25 @@ public class PasswordValidationTest {
         //Then
         Assertions.assertEquals(true,result);
     }
+    @Test
+    void spaceIncludedNo(){
+        //Given
+        String password= "neueFische1";
+        //When
+        boolean result = PasswordValidation.SpaceIncluded(password);
+        //Then
+        Assertions.assertEquals(true,result);
+    }
+    @Test
+    void spaceIncludedYes(){
+        //Given
+        String password= "neue Fische1";
+        //When
+        boolean result = PasswordValidation.SpaceIncluded(password);
+        //Then
+        Assertions.assertEquals(false,result);
+    }
+
 
     @Test
     void containUpperCaseNo(){

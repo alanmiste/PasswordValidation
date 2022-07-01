@@ -4,9 +4,10 @@ public class PasswordValidation {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print(
-                "1. A password must have at least eight characters.\n" +
-                "2. A password must consists at least one number.\n" +
-                "3. A password must contain at least one capital character \n" +
+                "1. A password must have at least EIGHT characters.\n" +
+                "2. A password must be without SPACES. \n"+
+                "3. A password must consists at least ONE NUMBER.\n" +
+                "4. A password must contain at least one CAPITAL character \n" +
                 "Enter a password: ");
         String password = input.nextLine();
 
@@ -22,6 +23,12 @@ public class PasswordValidation {
         return password.matches(".*\\d.*");
     }
 
+    public static boolean SpaceIncluded(String password) {
+        if(password.contains(" "))
+            return false;
+        else return true;
+    }
+
     public static boolean ContainUpperCase(String password) {
         for(int i=0;i<password.length();i++){
             if(Character.isUpperCase(password.charAt(i))){
@@ -32,8 +39,9 @@ public class PasswordValidation {
     }
 
     public static boolean PassCheck(String password) {
-        if(PasswordLength(password)>=8 && NumbersIncluded(password) && ContainUpperCase(password))
+        if(PasswordLength(password)>=8 && NumbersIncluded(password) && ContainUpperCase(password) && SpaceIncluded(password))
             return true;
         else return false;
     }
+
 }
