@@ -1,4 +1,15 @@
+import java.util.Scanner;
+
 public class PasswordValidation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print(
+                "1. A password must have at least eight characters.\n" +
+                "2. A password consists at least one number.\n" +
+                "3. A password must contain at least one capital character \n" +
+                "Enter a password (You are agreeing to the above Terms and Conditions.): ");
+        String password = input.nextLine();
+    }
     public static int PasswordLength(String password) {
         return password.length();
     }

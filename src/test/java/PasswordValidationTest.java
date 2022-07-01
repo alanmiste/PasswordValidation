@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.stream.Stream;
+
 public class PasswordValidationTest {
 
     @Test
@@ -52,4 +54,60 @@ public class PasswordValidationTest {
         //Then
         Assertions.assertEquals(true,result);
     }
+
+    @Test
+    void passCheck1(){
+        //Given
+        String password = "neue";
+        //When
+        boolean result = PasswordValidation.PassCheck(password);
+        //Then
+        Assertions.assertEquals(false,result);
+    }
+    @Test
+    void passCheck2(){
+        //Given
+        String password = "neuefische";
+        //When
+        boolean result = PasswordValidation.PassCheck(password);
+        //Then
+        Assertions.assertEquals(false,result);
+    }
+    @Test
+    void passCheck3(){
+        //Given
+        String password = "neueFische";
+        //When
+        boolean result = PasswordValidation.PassCheck(password);
+        //Then
+        Assertions.assertEquals(false,result);
+    }
+    @Test
+    void passCheck4(){
+        //Given
+        String password = "neuefi3";
+        //When
+        boolean result = PasswordValidation.PassCheck(password);
+        //Then
+        Assertions.assertEquals(false,result);
+    }
+@Test
+    void passCheck5(){
+        //Given
+        String password = "neueFi3";
+        //When
+        boolean result = PasswordValidation.PassCheck(password);
+        //Then
+        Assertions.assertEquals(false,result);
+    }
+@Test
+    void passCheck6(){
+        //Given
+        String password = "neueFische3";
+        //When
+        boolean result = PasswordValidation.PassCheck(password);
+        //Then
+        Assertions.assertEquals(true,result);
+    }
+
 }
